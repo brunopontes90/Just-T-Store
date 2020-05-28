@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+:root {
+    --yellow: #fdbe02;
+    --white: #FFFFFF;
+    --black: #071013;
+    --grey: #E6E6E6;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.bg-secondary {
+    background-color: var(--grey) !important;
+}
+
+.far {
+    padding: 15px 10px 10px 10px;
+    position: relative;
+}
+
+
+/*MENU*/
+
+.nav-link:hover {
+    text-decoration: var(--yellow) underline;
+}
+
+
+/*ICONE CADASTRO*/
+
+.nav-icon {
+    text-decoration: none !important;
+    color: var(--black);
+}
+
+.nav-icon:hover {
+    color: var(--yellow);
+}
+
+
+/*MENU COLLAPSE*/
+
+.navbar-toggler {
+    outline: none !important;
+    border: none;
+    color: var(--black) !important;
+}
+
+
+/*MAIN*/
+
+p {
+    font-size: 15pt;
+    padding: 36px 0px 36px 0px;
+}
+
+
+/*RODAPE*/
+
+footer i {
+    padding: 8px 30px 10px 0px;
+    font-size: 13pt;
+}

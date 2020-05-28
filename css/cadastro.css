@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+ :root {
+    --yellow: #fdbe02;
+    --white: #FFFFFF;
+    --black: #071013;
+    --grey: #E6E6E6;
+    --blue: rgb(174, 174, 182);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.bg-secondary {
+    background-color: var(--grey) !important;
+}
+
+.far {
+    padding: 15px 10px 10px 10px;
+    position: relative;
+}
+
+
+/*BOTOES*/
+
+.btn-primary {
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--black);
+}
+
+.btn-primary:hover {
+    background-color: var(--black);
+    border-color: var(--black);
+    color: var(--yellow);
+    transition: all 1s;
+}
+
+.btn-primary:focus {
+    box-shadow: none;
+    background-color: var(--black);
+    border-color: var(--black);
+    color: var(--yellow);
+    transition: all 1s;
+}
+
+.btn-primary:active {
+    box-shadow: none !important;
+    background-color: var(--black) !important;
+    border-color: var(--black) !important;
+    color: var(--yellow) !important;
+    transition: all 1s;
+}
+
+
+/*MENU*/
+
+.nav-link:hover {
+    text-decoration: var(--yellow) underline;
+}
+
+
+/*ICONE CADASTRO*/
+
+.nav-icon {
+    text-decoration: none !important;
+    color: var(--black);
+}
+
+.nav-icon:hover {
+    color: var(--yellow);
+}
+
+
+/*MENU COLLAPSE*/
+
+.navbar-toggler {
+    outline: none !important;
+    border: none;
+    color: var(--black) !important;
+}
+
+
+/*MAIN*/
+
+form {
+    padding: 0px 0px 20px 0px !important;
+}
+
+
+/*RODAPE*/
+
+footer i {
+    font-size: 15pt;
+    padding: 8px 30px 10px 0px;
+    font-size: 13pt;
+}
