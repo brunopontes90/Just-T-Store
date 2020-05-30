@@ -14,3 +14,20 @@ function finalizar() {
         document.getElementById('number').value = "";
     }
 }
+
+//CONTADOR PRODUTO
+
+function addItem() {
+    let items = document.getElementById("item");
+    let value = parseInt(item.innerHTML);
+    item.innerHTML = value += 1;
+}
+
+function subItem() {
+    let items = document.getElementById("item");
+    let value = parseInt(item.innerHTML);
+
+    if (value != 1) {
+        item.innerHTML = value - 1;
+    }
+}
