@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 :root {
-    --yellow: #fdbe02;
+    --yellow: #FFFF00;
+    --black: #000000;
     --white: #FFFFFF;
-    --black: #071013;
-    --grey: #E6E6E6;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
+    --red: #FF0000;
+    --blue: #0000FF;
+    --green: #088A08;
+    --orange: #FF8000;
+    --gray: #585858;
 }
 
 .bg-secondary {
@@ -54,8 +55,13 @@ body {
 
 /*MENU*/
 
+.nav-link {
+    font-size: 15pt;
+    font-family: 'Roboto', sans-serif;
+}
+
 .nav-link:hover {
-    text-decoration: var(--yellow) underline;
+    text-decoration: var(--red) underline;
 }
 
 
@@ -67,7 +73,7 @@ body {
 }
 
 .nav-icon:hover {
-    color: var(--yellow);
+    color: var(--red);
 }
 
 
@@ -96,21 +102,46 @@ body {
 
 section img {
     height: 300px !important;
-    width: 300px !important;
+    width: 400px !important;
 }
 
+#produtos {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15pt !important;
+    box-shadow: 0px 5px 10px 0px var(--black);
+    border-radius: 5px;
+}
 
-/*PRODUTOS*/
+#quemSomos {
+    background-color: var(--gray) !important;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15pt !important;
+    padding: 50px !important;
+}
+
+#fale {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15pt !important;
+    box-shadow: 0px 5px 10px 0px var(--black);
+    border-radius: 5px;
+}
 
 div img {
     border-radius: 10px;
+    border: 2px solid var(--red);
+    box-shadow: 1px 1px 10px 1px black;
 }
 
 
 /*RODAPE*/
 
+.bg-dark {
+    background-color: var(--black) !important;
+}
+
 footer i {
     font-size: 15pt;
     padding: 8px 30px 10px 0px;
     font-size: 13pt;
+    font-family: 'Roboto', sans-serif;
 }
