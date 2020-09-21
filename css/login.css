@@ -53,27 +53,6 @@
 }
 
 
-/*MENU*/
-
-.nav-link {
-    font-size: 15pt;
-    font-family: 'Roboto', sans-serif;
-}
-
-.nav-link:hover {
-    text-decoration: var(--red) underline;
-}
-
-
-/*MENU COLLAPSE*/
-
-.navbar-toggler {
-    outline: none !important;
-    border: none;
-    color: var(--black) !important;
-}
-
-
 /* MAIN */
 
 .card-signin {

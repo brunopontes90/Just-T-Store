@@ -53,39 +53,6 @@
 }
 
 
-/*MENU*/
-
-.nav-link {
-    font-size: 15pt;
-    font-family: 'Roboto', sans-serif;
-}
-
-.nav-link:hover {
-    text-decoration: var(--red) underline;
-}
-
-
-/*ICONE CADASTRO*/
-
-.nav-icon {
-    text-decoration: none !important;
-    color: var(--black);
-}
-
-.nav-icon:hover {
-    color: var(--yellow);
-}
-
-
-/*MENU COLLAPSE*/
-
-.navbar-toggler {
-    outline: none !important;
-    border: none;
-    color: var(--black) !important;
-}
-
-
 /*MAIN*/
 
 #cadasto {
