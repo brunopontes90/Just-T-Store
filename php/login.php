@@ -1,15 +1,19 @@
+<?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/8455a3d02b.js" crossorigin="anonymous"></script>
-    <script src="../javascript/comprar.js"></script>
     <link rel="stylesheet" href="../css/login.css">
     <link rel="icon" href="../img/Logo2.png">
 
@@ -29,31 +33,35 @@
     </header>
 
     <!-- Login -->
+
     <main class="container">
         <aside class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
                     <div class="card-body">
-                        <h1 class="card-title text-center text-muted h2 text-uppercase">Sign In</h1>
-                        <form class="form-signin">
+                        <?php
+                            if(isset($msg)) echo $smg;
+                        ?>
+                        <h1 class="card-title text-center text-muted h2 text-uppercase">Cadastro</h1>
+                        <form class="form-signin" method="post">
                             <div class="form-label-group">
-                                <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
-                                <label for="inputEmail">Email</label>
+                                <input type="email" class="form-control" name="login" placeholder="Email" required autofocus>
+                                <label for="login">Email</label>
                             </div>
 
                             <div class="form-label-group">
-                                <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
-                                <label for="inputPassword">Senha</label>
+                                <input type="password" name="senha" class="form-control" placeholder="Senha" required>
+                                <label for="senha">Senha</label>
                             </div>
 
                             <div class="custom-control custom-checkbox mb-3">
                                 <input type="checkbox" class="custom-control-input" id="customCheck1">
                                 <label class="custom-control-label" for="customCheck1">Lembrar Senha</label>
                             </div>
-                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Entrar</button>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="entrar">Entrar</button>
                             <hr class="my-4">
                             <div class="row">
-                                <a href="../html/cadastro.html" class="m-3" id="nao-possuo">Não possuo cadastro</a>
+                                <a href="cadastro.php" class="m-3" id="nao-possuo">Não possuo cadastro</a>
                                 <a href="../index.html" class="m-3" id="pagina-inicial">Voltar a pagina inicial</a>
                             </div>
                         </form>
@@ -62,6 +70,7 @@
             </div>
         </aside>
     </main>
+
     <!--Rodape-->
     <footer class="container-fluid bg-dark mt-5">
         <nav id="redes " class="row">
