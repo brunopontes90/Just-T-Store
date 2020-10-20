@@ -39,11 +39,11 @@
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
                     <div class="card-body">
+                        <h1 class="card-title text-center text-muted h2 text-uppercase">Cadastro</h1>
+                        <form class="form-signin" method="post">
                         <?php
                             if(isset($msg)) echo $smg;
                         ?>
-                        <h1 class="card-title text-center text-muted h2 text-uppercase">Cadastro</h1>
-                        <form class="form-signin" method="post">
                             <div class="form-label-group">
                                 <input type="email" class="form-control" name="login" placeholder="Email" required autofocus>
                                 <label for="login">Email</label>
