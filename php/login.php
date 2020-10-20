@@ -39,8 +39,8 @@
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
                     <div class="card-body">
-                        <h1 class="card-title text-center text-muted h2 text-uppercase">Cadastro</h1>
                         <form class="form-signin" method="post">
+                        <h1 class="card-title text-center text-muted h2 text-uppercase">Login</h1>
                         <?php
                             if(isset($msg)) echo $smg;
                         ?>
