@@ -41,9 +41,6 @@
                     <div class="card-body">
                         <form class="form-signin" method="post">
                         <h1 class="card-title text-center text-muted h2 text-uppercase">Login</h1>
-                        <?php
-                            if(isset($msg)) echo $smg;
-                        ?>
                             <div class="form-label-group">
                                 <input type="email" class="form-control" name="login" placeholder="Email" required autofocus>
                                 <label for="login">Email</label>
