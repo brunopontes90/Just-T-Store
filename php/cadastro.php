@@ -2,7 +2,7 @@
    
    global $msg;
    
-   echo "<script>alert($msg)</script>";
+//    echo "<script>alert($msg)</script>";
    
 ?>
     <!DOCTYPE html>
