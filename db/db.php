@@ -1,10 +1,12 @@
 <?php
-require_once './db/config.php';
+require_once 'config.php';
 
-$db = new PDO($dsn, $user, $password);
+$banco = new banco();
 
+// CONECTA COM O BANCO DE DADOS 'CADASTRO'
 try {
-    $db = new PDO($dsn, $user, $password);
+    $connect = new PDO($banco->$db, $banco->$user, $banco->$password);
+    
 } catch (PDOException $objErro) {
     echo 'SGBD Indisponivel: ' . $objErro -> getMessage();
     exit();
