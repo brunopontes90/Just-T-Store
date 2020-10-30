@@ -1,6 +1,6 @@
 <?php
 
-require_once './db/db.php';
+require_once '../db/db.php';
 require 'sessao.php';
 
 //armazenando login e senha no db
@@ -23,9 +23,9 @@ if(isset($_SESSION['login'])){ //caso o user estiver logado no sistema
         include 'pag.php';
     }else{
         $msg = 'Credenciais invalidas, tente novamente';
-        include 'login.php';
+        header('Location: /html/login.html');    
     }
 }else { //Caso o user tenha entrado pela 1° vez no site
 
-    include 'login.php'; //se nao estiver entra no form
+    header('Location: /html/login.html'); //se nao estiver entra no form
 }
