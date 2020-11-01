@@ -19,7 +19,7 @@
 
         <!--Logo-->
         <nav class="navbar navbar-expand-sm navbar-light">
-            <a href="../index.html" class="navbar-brand">
+            <a href="../index.php" class="navbar-brand">
                 <img src="../img/Logo2.png" alt="img" style="width: 5rem;">
                 <h1 class="d-none">Just-T Store</h1>
             </a>
@@ -27,13 +27,15 @@
     </header>
 
     <!-- Login -->
-
     <main class="container">
         <aside class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
                     <div class="card-body">
-                        <form class="form-signin" method="post" action="/php/login.php">
+                    <div class="text-danger text-center">
+                        <?php if (isset($msg)) echo $msg; ?>
+                    </div>
+                         <form class="form-signin" method="post" action="/php/login.php">
                             <h1 class="card-title text-center text-muted h2 text-uppercase">Login</h1>
                             <div class="form-label-group">
                                 <input type="email" class="form-control" name="login" placeholder="Email" required autofocus>
@@ -52,8 +54,8 @@
                             <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="entrar">Entrar</button>
                             <hr class="my-4">
                             <div class="row">
-                                <a href="cadastro.html" class="m-3" id="nao-possuo">Não possuo cadastro</a>
-                                <a href="../index.html" class="m-3" id="pagina-inicial">Voltar a pagina inicial</a>
+                                <a href="/html/cadastro.html" class="m-3" id="nao-possuo">Não possuo cadastro</a>
+                                <a href="../index.php" class="m-3" id="pagina-inicial">Voltar a pagina inicial</a>
                             </div>
                         </form>
                     </div>

@@ -2,4 +2,4 @@
 
 echo 'Logado no site';
 ?>
-<a href="./html/login.html">Voltar</a>
+<a href="./html/login.php">Voltar</a>

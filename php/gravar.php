@@ -1,26 +1,27 @@
 <?php
 
-require_once 'db.php';
+require_once '../db/db.php';
 
-global $msg;
-
-$objStmt =  $db -> prepare("INSERT INTO cadastrando 
-(email, senha, endereco, complemento, cidade, estado, cep) 
+$objStmt = $banco->prepare("INSERT INTO cadastro 
+(email, senha, nome, endereco, complemento, cidade, estado, cep) 
 VALUES 
-( :em , :sn, :ed, :cp, :cd, :et, :ce)");
+(:email, :senha, :nomecompleto, :endereco, :complemento, :cidade, :estado, :cep)");
 
 // Substitui :em e em pelo valor enviado pelo usuario
-$objStmt ->bindParam(':em', $_POST['em']);
-$objStmt ->bindParam(':sn', $_POST['sn']);
-$objStmt ->bindParam(':ed', $_POST['ed']);
-$objStmt ->bindParam(':cp', $_POST['cp']);
-$objStmt ->bindParam(':cd', $_POST['cd']);
-$objStmt ->bindParam(':et', $_POST['et']);
-$objStmt ->bindParam(':ce', $_POST['ce']);
+$objStmt->bindParam(':email', $_POST['email']);
+$objStmt->bindParam(':senha', $_POST['senha']);
+$objStmt->bindParam(':nomecompleto', $_POST['nome'] . ' ' . $_POST['sobrenome']);
+$objStmt->bindParam(':endereco', $_POST['endereco']);
+$objStmt->bindParam(':complemento', $_POST['complemento']);
+$objStmt->bindParam(':cidade', $_POST['cidade']);
+$objStmt->bindParam(':estado', $_POST['estado']);
+$objStmt->bindParam(':cep', $_POST['cep']);
 
 // Executar
-if ($objStmt -> execute()){
+if ($objStmt->execute()){
     $msg = 'Contado gravado com sucesso!';
 }else{
     $msg = ':-( deu erro, tente novamente';
 }
+
+echo $msg;

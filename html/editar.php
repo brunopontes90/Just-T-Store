@@ -35,43 +35,43 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputEmail4">Nome</label>
-                    <input type="text" class="form-control" id="inputEmail4" placeholder="Nome" name="nome">
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="Nome" name="nome" value=<?=$row['nome']?>>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputPassword4">Sobrenome</label>
-                    <input type="text" class="form-control" id="inputPassword4" placeholder="Sobrenome" name="sobrenome">
+                    <input type="text" class="form-control" id="inputPassword4" placeholder="Sobrenome" value=<?=$row['sobrenome']?>>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="nome@exemplo.com" name="email">
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="nome@exemplo.com" name="email" value=<?=$row['email']?>> <!-- adicionar o value em todos os campos -->
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputPassword4">Senha</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="Senha" name="senha">
+                    <input type="password" class="form-control" id="inputPassword4" placeholder="Senha" name="senha" value=<?=$row['senha']?>>
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputAddress">Endereço</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Digite o endereço" name="endereco">
+                <input type="text" class="form-control" id="inputAddress" placeholder="Digite o endereço" name="endereco" value=<?=$row['endereco']?>>
             </div>
             <div class="form-group">
                 <label for="inputAddress2">Complemento</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, hotel, casa, etc." name="complemento">
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, hotel, casa, etc." name="complemento" value=<?=$row['complemento']?>>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputCity">Cidade</label>
-                    <input type="text" class="form-control" id="inputCity" placeholder="Digite sua cidade" name="cidade">
+                    <input type="text" class="form-control" id="inputCity" placeholder="Digite sua cidade" name="cidade" value=<?=$row['cidade']?>>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputEstado">Estado</label>
                     <select id="inputEstado" class="form-control">
                   <option disabled selected>Escolher...</option>
-                    <option>Acre</option>
+                        <option>Acre</option>
                     <option>Alagoas</option>
-                    <option>Amapá</option>
+                  <option>Amapá</option>
                     <option>Amazonas</option>
                     <option>Bahia</option>
                     <option>Ceará</option>
@@ -100,7 +100,7 @@
                 </div>
                 <div class="form-group col-md-2">
                     <label for="inputCEP">CEP</label>
-                    <input type="text" class="form-control" id="inputCEP" placeholder="CEP" name="cep">
+                    <input type="text" class="form-control" id="inputCEP" placeholder="CEP" name="cep" value=<?=$row['cep']?>>
                 </div>
 
 

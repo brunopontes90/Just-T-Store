@@ -1,31 +1,36 @@
 <?php
 
 require_once '../db/db.php';
-require 'sessao.php';
-
-//armazenando login e senha no db
-
-$banco = new banco();
 
 if(isset($_SESSION['login'])){ //caso o user estiver logado no sistema
 
     include 'pag.php';
 
 }else if(isset($_POST['entrar'])){ //caso o user tenha acabado de preencher o form de login
-    // VERFICA SE AS CREDENCIAIS SÃO VALIDAS
-    $login = $_POST['login'];
-    $senha = $_POST['senha'];
+    // Faz o select no banco verificando se o login e senha informados existem
+    $query = $banco->prepare("SELECT nome FROM cadastro WHERE email = :email AND senha = :senha");
+    $query->bindparam(':email', $_POST['login']);
+    $query->bindparam(':senha', $_POST['senha']);
+    $query->execute();
+    
+    // pega todas as linhas em forma de array
+    $result = $query->fetchAll(PDO::FETCH_CLASS);
+    
+    // Verifica se existe 1 elemento dentro do array
+    if (count($result) == 1) {
 
-    if (in_array(['user' => $login, 'pass' => $senha], $credenciais)) {
+        session_start();
 
         //Cria vetor no SESSION para o login do user e verifica se existe esse login nas outras paginas
-        $_SESSION['login'] = $login;
-        include 'pag.php';
+        $_SESSION['login'] = $result[0]->nome;
+
+        // redireciona para a home
+        header('Location: /index.php');
     }else{
         $msg = 'Credenciais invalidas, tente novamente';
-        header('Location: /html/login.html');    
+        include '../html/login.php'; //se nao estiver entra no form
     }
 }else { //Caso o user tenha entrado pela 1° vez no site
 
-    header('Location: /html/login.html'); //se nao estiver entra no form
+    include '../html/login.php'; //se nao estiver entra no form
 }
