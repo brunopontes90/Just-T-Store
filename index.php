@@ -23,7 +23,7 @@
 
         <!--Logo-->
         <nav class="navbar navbar-expand-sm navbar-light">
-            <a href="/index.php" class="navbar-brand">
+        <a href="../index.php" class="navbar-brand">
                 <img src="../img/Logo2.png" alt="img" style="width: 5rem;">
                 <h1 class="d-none">Just-T Store</h1>
             </a>
@@ -44,7 +44,7 @@
                         <a class="nav-link" href="#fale" class="nav-link">Fale Conosco</a>
 
                     </li>
-                </ul>
+                  </ul>
                 <div>
                     <!-- Login -->
                     <?php if (isset($_SESSION['login'])) {?>
@@ -52,11 +52,18 @@
                         Ola, <?=$_SESSION['login']?>
 
                         <!-- Editar -->
-                        <a href="./html/editar.php" class="nav-icon mx-4">
+                        <a href="./html/editar.php" class="nav-icon mx-3">
                             <i class="fas fa-edit"></i>
                         </a>
+                        
+                        <!-- Excluir -->
+                        <a href="./html/excluirUsuario.php" class="nav-icon mx-3">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+
+
                         <!-- Sair -->
-                        <a href="./php/sair.php" class="nav-icon mx-4">
+                        <a href="./php/sair.php" class="nav-icon mx-3">
                             <i class="fas fa-sign-out-alt"></i>
                         </a>
 
