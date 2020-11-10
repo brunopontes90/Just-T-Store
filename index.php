@@ -42,8 +42,13 @@
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="#fale" class="nav-link">Fale Conosco</a>
-
                     </li>
+
+                    <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {?>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="php/listarProdutos.php" class="nav-link">Controle de produtos</a>
+                        </li>
+                    <?php } ?>
                   </ul>
                 <div>
                     <!-- Login -->
@@ -52,16 +57,11 @@
                         Ola, <?=$_SESSION['login']?>
 
                         <!-- Editar -->
-                        <a href="./html/editar.php" class="nav-icon mx-3">
+                        <a href="./php/editar.php" class="nav-icon mx-3">
                             <i class="fas fa-edit"></i>
                         </a>
                         
-                        <!-- Excluir -->
-                        <a href="./html/excluirUsuario.php" class="nav-icon mx-3">
-                            <i class="fas fa-trash-alt"></i>
-                        </a>
-
-
+                       
                         <!-- Sair -->
                         <a href="./php/sair.php" class="nav-icon mx-3">
                             <i class="fas fa-sign-out-alt"></i>
@@ -93,58 +93,37 @@
                 </div>
             </div>
 
+            <!-- chamar a classe $produto->listar() -->
+                        <?php 
+                        require_once 'db/db.php';
+
+                        // Listar a consulta
+                        $result = array();
+                        $sql = "SELECT * FROM produto";
+                       
+                        $result = $banco->query($sql)->fetchAll();
+                        ?>
+
+
 
             <!--PRODUTO 1-->
             <div class="row">
+
+            
+                <?php foreach($result as $row) {?>
+
                 <div class="col-12 col-md-6 col-lg-3 text-center">
-                    <img src="../img/bateriaPineng.png" class="img-fluid">
+                    <img src="<?=$row['imagem']?>" class="img-fluid">
                     <div class="mt-3">
-                        <a href="../html/powerBank.html" class="btn btn-primary">Visualizar</a>
+                        <a href="/html/produto.php?id=<?=$row['id']?>" class="btn btn-primary">Visualizar</a>
                     </div>
-                    <span class="h5 mt-4 d-block">Carregador Portátil PowerBank Pineng</span>
+                    <span class="h5 mt-4 d-block"><?=$row['nome']?></span>
                     <div class="mb-3">
-                        <span class="font-weight-bold">R$70</span>
+                        <span class="font-weight-bold">R$ <?=$row['valor']?></span>
                     </div>
                 </div>
 
-
-                <!--PRODUTO 2-->
-                <div class="col-12 col-md-6 col-lg-3 text-center">
-                    <img src="../img/relPretoComPulseira3.jpeg" class="img-fluid">
-                    <div class="mt-3">
-                        <a href="../html/iwoBranco.html" class="btn btn-primary">Visualizar</a>
-                    </div>
-                    <span class="h5 mt-4 d-block">Relógio Smartwatch Iwo 12 Sport Prata</span>
-                    <div class="mb-3">
-                        <span class="font-weight-bold">R$450</span>
-                    </div>
-                </div>
-
-
-                <!--PRODUTO 3-->
-                <div class="col-12 col-md-6 col-lg-3 text-center">
-                    <img src="../img/relPretoComPulseira4.jpeg" class="img-fluid">
-                    <div class="mt-3">
-                        <a href="../html/iwoPreto.html" class="btn btn-primary">Visualizar</a>
-                    </div>
-                    <span class="h5 mt-4 d-block">Relógio Smartwatch Iwo 12 Sport Preto</span>
-                    <div class="mb-3">
-                        <span class="font-weight-bold">R$450</span>
-                    </div>
-                </div>
-
-
-                <!--PRODUTO 4-->
-                <div class="col-12 col-md-6 col-lg-3 text-center">
-                    <img src="../img/relRosa.JPG" class="img-fluid">
-                    <div class="mt-3">
-                        <a href="../html/iwoRosa.html" class="btn btn-primary">Visualizar</a>
-                    </div>
-                    <span class="h5 mt-4 d-block">Relógio Smartwatch Iwo 12 Sport Rose</span>
-                    <div class="mb-3">
-                        <span class="font-weight-bold">R$450</span>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </section>
     </main>
