@@ -73,9 +73,9 @@ else {
 
 // Executar
 if ($objStmt->execute()) {
-    $msg = 'Gravado com sucesso!';
+    $msg = 'Operação realizada com sucesso!';
 }else{
-    $msg = ':-( deu erro, tente novamente';
+    $msg = 'ERRO, tente novamente';
     print_r($objStmt->errorInfo());
 }
 

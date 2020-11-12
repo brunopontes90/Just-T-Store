@@ -65,13 +65,12 @@ require_once '../db/db.php';
 </header>
 
 <main class="container mb-5" id="cadasto">
-    <form action="post" action="/php/excluirUsuario.php">
-                
+
         <table class="m-2">
         <tbody class="text-center">
             <td>
                 <label class="font-weight-bold m-2 text-uppercase">Nome</label>
-                
+       
             </td>
             <td>
                 <label class="font-weight-bold m-2 text-uppercase">Imagem</label>
@@ -84,20 +83,21 @@ require_once '../db/db.php';
             </td>
 
         <?php foreach($result as $row) {?>
+            
             <tr>
                 <td class="p-2"><?=$row['nome']?></td>
                 <td class="p-2"><img src="../img/<?=$row['imagem']?>" id="image" class="mb-3"></td>
                 <td class="p-2"><label class="p-1">R$</label><?=$row['valor']?></td>
                 <td class="p-2">
                     <a href="/php/editarProduto.php?id=<?=$row['id']?>" class="btn btn-primary fas fa-edit mb-2">Editar</a>
-              
-                    <a href="/php/excluirProduto.php?id=<?=$row['id']?>" class="btn btn-primary fas fa-trash-alt mt-2">Excluir</a>
+
+                    <a href="/php/excluirProduto.php?id=<?=$row['id']?>" class="btn btn-primary fas fa-trash-alt mb-2">Excluir</a>
                 </td>
             </tr>
         <?php } ?>
         </tbody>
     </table>
-    </form>
+
 </main>
 
 <div class="text-center m-5">

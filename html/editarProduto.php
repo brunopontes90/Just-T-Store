@@ -30,20 +30,20 @@
 
     <main class="container" id="cadasto">
         <form class="m-5" method='post' action="/php/gravarProduto.php">
-            <h1 class="h2 text-center text-uppercase text-muted">Cadastro</h1>
+            <h1 class="h2 text-center text-uppercase text-muted font-weight-bold">Editar Produto</h1>
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="inputName">Nome</label>
+                    <label for="inputName" class="font-weight-bold text-muted">Nome</label>
                     <input type="text" class="form-control" id="inputName" placeholder="Nome" name="nome" value="<?=$row['nome']?>">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputValor">Valor</label>
+                    <label for="inputValor" class="font-weight-bold text-muted">Valor</label>
                     <input type="text" class="form-control" id="inputValor" placeholder="0,00" name="valor" value="<?=$row['valor']?>">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputImagem">Imagem</label>
+                    <label for="inputImagem" class="font-weight-bold text-muted">Imagem</label>
                     <input type="file" class="form-control" id="inputImagem" name="imagem">
                 </div>
             </div>
