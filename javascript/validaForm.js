@@ -12,6 +12,16 @@ function validaForm(formulario) {
         return false;
     }
 
+    // VERIFICA SE O EMAIL FOI CRIADO
+    if (formulario.email.value == "" || formulario.email.value == null) {
+
+        // RETORNA ALERTA CASO ESTEJA VAZIO
+        alert("Por favor, informe seu email");
+        formulario.email.focus();
+
+        // O FORMULARIO NÃO É ENVIADO
+        return false;
+    }
 
     // VERIFICA SE FOI CRIADO UMA SENHA
     if (formulario.senha.value == "" || formulario.senha.value == null) {

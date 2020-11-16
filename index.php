@@ -94,22 +94,21 @@
             </div>
 
             <!-- chamar a classe $produto->listar() -->
-                        <?php 
-                        require_once 'db/db.php';
+            <?php 
+                require_once 'db/db.php';
 
-                        // Listar a consulta
-                        $result = array();
-                        $sql = "SELECT * FROM produto";
-                       
-                        $result = $banco->query($sql)->fetchAll();
-                        ?>
+                // Listar a consulta
+                $result = array();
+                $sql = "SELECT * FROM produto";
+                
+                $result = $banco->query($sql)->fetchAll();  
+            ?>
 
 
 
             <!--PRODUTO 1-->
             <div class="row">
-
-            
+          
                 <?php foreach($result as $row) {?>
 
                 <div class="col-12 col-md-6 col-lg-3 text-center">
