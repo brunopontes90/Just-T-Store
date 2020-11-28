@@ -64,8 +64,8 @@
 }
 
 #image {
-    width: 700px !important;
-    height: 200px !important;
+    width: auto !important;
+    height: 250px !important;
 }
 
 

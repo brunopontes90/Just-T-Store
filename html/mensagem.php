@@ -34,11 +34,12 @@
         <?=$msg?>
         </div>
 
-        <div class="text-center m-5">
+     <div class="text-center m-5">
             <a href="../php/listarProdutos.php" class="btn btn-primary">Voltar a edição</a>
             <a href="../../index.php" class="btn btn-primary">Voltar a home</a>
         </div>
     </main>
+
 </body>
 
 </html>

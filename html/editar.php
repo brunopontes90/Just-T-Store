@@ -10,6 +10,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/8455a3d02b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/cadastro.css">
+    <link rel="stylesheet" href="../css/index.css">
     <link rel="icon" href="../img/Logo2.png">
 
     <title>Just-t Store</title>
@@ -19,18 +20,38 @@
     <header class="container-fluid bg-secondary">
 
         <!--Logo-->
-        <nav class="navbar navbar-expand-sm navbar-light">
+        <nav class="d-flex justify-content-between navbar navbar-expand-sm navbar-light">
             <a href="../index.php" class="navbar-brand">
                 <img src="../img/Logo2.png" alt="img" style="width: 5rem;">
                 <h1 class="d-none">Just-T Store</h1>
             </a>
+
+            <div class="font-weight-bold m-3 h6">
+                    <!-- Login -->
+                    <?php if (isset($_SESSION['login'])) {?>
+                            
+                        Ola, <?=$_SESSION['login']?>
+ 
+                      
+                        <!-- Sair -->
+                        <a href="sair.php" class="nav-icon mx-3">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </a>
+
+                    <?php } else {?>
+    
+                        <a href="./html/login.php" class="nav-icon mx-2">
+                            <i class="far fa-user"></i>
+                        </a>
+                        
+                    <?php }?>
         </nav>
 
     </header>
 
     <main class="container" id="cadasto">
+    <h1 class="h2 text-center text-uppercase text-muted">Editar Cadastro</h1>
         <form class="m-5" method='post' action="/php/gravar.php">
-            <h1 class="h2 text-center text-uppercase text-muted">Cadastro</h1>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="inputEmail4">Nome</label>

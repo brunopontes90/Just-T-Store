@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/8455a3d02b.js" crossorigin="anonymous"></script>
+    <script src="../javascript/validaForm.js"></script>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="icon" href="../img/Logo2.png">
 
@@ -35,22 +36,25 @@
             <div id="navBarButton" class="collapse navbar-collapse">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.php" class="nav-link">Inicio</a>
+                        <a href="index.php" class="nav-link text-muted font-weight-bold">Inicio</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#quemSomos" class="nav-link">Quem Somos</a>
+                        <a href="#quemSomos" class="nav-link text-muted font-weight-bold">Quem Somos</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#fale" class="nav-link">Fale Conosco</a>
+                        <a href="#fale" class="nav-link text-muted font-weight-bold">Fale Conosco</a>
                     </li>
 
+                    <!-- VERIFICA SE ESTA LOGADO COMO ADMIN NA POSIÇÃO 1 DO BANCO -->
                     <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {?>
                         <li class="nav-item active">
-                            <a class="nav-link" href="php/listarProdutos.php" class="nav-link">Controle de produtos</a>
+                            <a href="php/listarProdutos.php" class="nav-link text-muted font-weight-bold">Controle de produtos</a>
                         </li>
                     <?php } ?>
                   </ul>
-                <div>
+                
+                <!-- VERIFICA SE JA ESTA LOGADO, SE ESTIVER, APARECE OS ICONES DE EDITAR E SAIR -->
+                <div class="font-weight-bold">
                     <!-- Login -->
                     <?php if (isset($_SESSION['login'])) {?>
                             
@@ -103,22 +107,20 @@
                 
                 $result = $banco->query($sql)->fetchAll();  
             ?>
-
-
-
-            <!--PRODUTO 1-->
+            <!--PRODUTO-->
             <div class="row">
           
                 <?php foreach($result as $row) {?>
 
                 <div class="col-12 col-md-6 col-lg-3 text-center">
-                    <img src="<?=$row['imagem']?>" class="img-fluid">
-                    <div class="mt-3">
+                    
+                    <img src="../img/<?=$row['imagem']?>" class="img-fluid">
+                    <!-- <div class="mt-3">
                         <a href="/html/produto.php?id=<?=$row['id']?>" class="btn btn-primary">Visualizar</a>
-                    </div>
+                    </div> -->
                     <span class="h5 mt-4 d-block"><?=$row['nome']?></span>
                     <div class="mb-3">
-                        <span class="font-weight-bold">R$ <?=$row['valor']?></span>
+                        <span class="font-weight-bold text-muted">R$ <?=$row['valor']?></span>
                     </div>
                 </div>
 
@@ -141,42 +143,32 @@
 
     <!--FALE CONOSCO-->
     <section class="container mt-5" id="fale">
-        <h1 class="h1 text-center txt-uppercase text-muted">Fale Conosco</h1>
-        <form class="m-5" action="./php/cadastro.php" method="post">
-            <div class="form-row ">
+        <form class="m-5" method="post" onsubmit="return validaForm(this);">
+            <h1 class="h1 text-center text-uppercase text-muted font-weight-bold">Fale Conosco</h1>
                 <div class="form-row ">
-                    <div class="col">
-                        <label for="nome">Nome</label>
-                        <input type="text" id="nome" class="form-control " placeholder="Nome">
-                    </div>
-                    <div class="col">
-                        <label for="sobre ">Sobrenome</label>
-                        <input type="text " id="sobreNome" class="form-control " placeholder="Sobrenome ">
+                    <div class="form-row col-md-12">
+                        <div class="col">
+                            <label for="nomeCompleto">Nome</label>
+                            <input type="text" class="form-control " placeholder="Nome Completo" name="nomeCompleto" required>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="form-grou mt-3">
-                <label for="exampleFormControlInput1 ">Endereço de email</label>
-                <input type="email " class="form-control" id="exampleFormControlInput1" placeholder="nome@exemplo.com">
-            </div>
-            <div class="form-group mt-3">
-                <label for="exampleFormControlSelect1 ">Tipo</label>
-                <select class="form-control " id="exampleFormControlSelect1">
-                    <option disabled selected>Selecione uma opção...</option>
-                    <option value="info ">Informações</option>
-                    <option value="rec ">Reclamações</option>
-                    <option value="elog ">Elogios</option>
-                    <option value="sug ">Sugestões</option>
-                </select>
-            </div>
+                <div class="form-group mt-3">
+                    <label for="exampleFormControlInput1 ">Endereço de email</label>
+                    <input type="email " class="form-control" id="exampleFormControlInput1" placeholder="email@email.com" name="endEmail" required>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="exampleFormControlSelect1 ">Tipo</label>
+                    <input type="text" name="tipo" id="tipo" class="form-control col-md-12" placeholder="Informações, Reclamações, Elogios, Sugestões" required>
+                </div>
 
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Mensagem</label>
-                <textarea class="form-control " id="exampleFormControlTextarea1" rows="3" placeholder="Escreva sua mensagem "></textarea>
-            </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Mensagem</label>
+                    <textarea class="form-control " id="exampleFormControlTextarea1" rows="3" placeholder="Escreva sua mensagem " required></textarea>
+                </div>
 
-            <input type="submit" class="btn btn-primary m-3" value="Enviar"></input>
+                <input type="submit" class="btn btn-primary m-3" value="Enviar"></input>
 
         </form>
     </section>

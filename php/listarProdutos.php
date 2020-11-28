@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once '../db/db.php';
 
  // Listar a consulta
@@ -8,13 +8,6 @@ require_once '../db/db.php';
 
  $result = $banco->query($sql)->fetchAll();
  
-
- // chamar a classe $produto->listar()
-
-
-
-// include html/lista.html
-// no html
 ?>
 
 <!DOCTYPE html>
@@ -28,11 +21,14 @@ require_once '../db/db.php';
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/8455a3d02b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/cadastro.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="icon" href="../img/Logo2.png">
+    
     <title>Just-t Store</title>
 </head>
 <body>
       <!--MENU-->
-<header class="container-fluid bg-white" id="topo">
+<header class="container-fluid bg-white mt-3" id="topo">
 
     <!--Logo-->
     <nav class="d-flex justify-content-between">
@@ -41,19 +37,20 @@ require_once '../db/db.php';
                 <h1 class="d-none">Just-T Store</h1>
             </a>
             
-            <div>
+            <div class="font-weight-bold m-3 h6">
                     <!-- Login -->
                     <?php if (isset($_SESSION['login'])) {?>
                             
                         Ola, <?=$_SESSION['login']?>
-
-                    <!-- Sair -->
-                        <a href="./php/sair.php" class="nav-icon mx-3">
+ 
+                      
+                        <!-- Sair -->
+                        <a href="sair.php" class="nav-icon mx-3">
                             <i class="fas fa-sign-out-alt"></i>
                         </a>
 
                     <?php } else {?>
-
+    
                         <a href="./html/login.php" class="nav-icon mx-2">
                             <i class="far fa-user"></i>
                         </a>
@@ -66,7 +63,7 @@ require_once '../db/db.php';
 
 <main class="container mb-5" id="cadasto">
 
-        <table class="m-2">
+        <table class="m-2 d-flex justify-content-center">
         <tbody class="text-center">
             <td>
                 <label class="font-weight-bold m-2 text-uppercase">Nome</label>
@@ -79,7 +76,7 @@ require_once '../db/db.php';
                 <label class="font-weight-bold m-2 text-uppercase">Valor</label>
             </td>
             <td>
-                <a href="/html/cadastrarProduto.html" class="btn btn-primary font-weight-bold fas fa-plus-square"> Novo Produto</a>
+                <a href="/html/cadastrarProduto.html" class="btn btn-primary font-weight-bold fas fa-plus-square">Novo Produto</a>
             </td>
 
         <?php foreach($result as $row) {?>

@@ -8,6 +8,7 @@ session_start();
 $result = array();
 $sql = "SELECT * FROM produto WHERE id = " . $_GET['id'];
 
+
 // executa a query e pega o resultado como array
 $result = $banco->query($sql)->fetchAll();
  

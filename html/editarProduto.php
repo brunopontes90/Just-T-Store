@@ -29,7 +29,7 @@
     </header>
 
     <main class="container" id="cadasto">
-        <form class="m-5" method='post' action="/php/gravarProduto.php">
+        <form class="m-5" method="post" enctype="multipart/form-data" action="/php/gravarProduto.php">
             <h1 class="h2 text-center text-uppercase text-muted font-weight-bold">Editar Produto</h1>
             <div class="form-row">
                 <div class="form-group col-md-12">

@@ -61,8 +61,11 @@ else {
 
 // Executar
 if ($objStmt->execute()) {
-    $msg = 'Contado gravado com sucesso!';
+
+    include 'login.php';
+    
 }else{
+
     $msg = ':-( deu erro, tente novamente';
 }
 

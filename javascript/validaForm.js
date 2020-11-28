@@ -78,4 +78,17 @@ function validaForm(formulario) {
         // O FORMULARIO NÃO É ENVIADO
         return false;
     }
+
+    // FORMULARIO FALE CONOSCO
+    if (formulario.nomeCompleto.value == "" || formulario.nomeCompleto.value == null || formulario.nomeCompleto.length < 3) {
+
+        // RETORNA ALERTA CASO ESTEJA VAZIO
+        alert("Por favor, indique seu nome");
+        formulario.nome.focus();
+
+        // O FORMULARIO NÃO É ENVIADO
+        return false;
+    }
+
+    console.log(formulario);
 }
