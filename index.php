@@ -36,7 +36,7 @@
             <div id="navBarButton" class="collapse navbar-collapse">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item active">
-                        <a href="index.php" class="nav-link text-muted font-weight-bold">Inicio</a>
+                        <a href="index.php" class="nav-link text-muted font-weight-bold">Início</a>
                     </li>
                     <li class="nav-item active">
                         <a href="#quemSomos" class="nav-link text-muted font-weight-bold">Quem Somos</a>
@@ -48,7 +48,7 @@
                     <!-- VERIFICA SE ESTA LOGADO COMO ADMIN NA POSIÇÃO 1 DO BANCO -->
                     <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {?>
                         <li class="nav-item active">
-                            <a href="php/listarProdutos.php" class="nav-link text-muted font-weight-bold">Controle de produtos</a>
+                            <a href="php/listarProdutos.php" class="nav-link text-muted font-weight-bold">Controle de Produtos</a>
                         </li>
                     <?php } ?>
                   </ul>
@@ -58,7 +58,7 @@
                     <!-- Login -->
                     <?php if (isset($_SESSION['login'])) {?>
                             
-                        Ola, <?=$_SESSION['login']?>
+                        Olá, <?=$_SESSION['login']?>
 
                         <!-- Editar -->
                         <a href="./php/editar.php" class="nav-icon mx-3">

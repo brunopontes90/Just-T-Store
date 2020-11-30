@@ -55,7 +55,7 @@
                             <hr class="my-4">
                             <div class="row">
                                 <a href="/html/cadastro.html" class="m-3" id="nao-possuo">Não possuo cadastro</a>
-                                <a href="../index.php" class="m-3" id="pagina-inicial">Voltar a pagina inicial</a>
+                                <a href="../index.php" class="m-3" id="pagina-inicial">Voltar a página inicial</a>
                             </div>
                         </form>
                     </div>
@@ -63,49 +63,6 @@
             </div>
         </aside>
     </main>
-
-    <!--Rodape-->
-    <footer class="container-fluid bg-dark mt-5">
-        <nav id="redes " class="row">
-            <div class="col-sm-12 ">
-                <div>
-                    <ul class="nav justify-content-center ">
-
-                        <!--FACEBOOK-->
-                        <li class="nav-item">
-                            <a href="https://www.facebook.com/justt.storebr/?eid=ARDFdcZObZjv3PDsFGuHrvH34-6qpOm87IZRsPtgJ9V9ovVikJPLfPEwy2Ki8juwZpiYVCr6LBHfGRe0" target="_blank">
-                                <i class="fab fa-facebook-f text-decoration-none text-white"></i>
-                            </a>
-                        </li>
-
-                        <!--INSTAGRAM-->
-                        <li class="nav-item">
-                            <a href="https://www.instagram.com/justt.store/" target="_blank">
-                                <i class="fab fa-instagram text-decoration-none text-white"></i>
-                            </a>
-                        </li>
-
-                        <!--WHATSAPP-->
-                        <li class="nav-item">
-                            <a href="https://api.whatsapp.com/send?phone=5511934243640&text=Ol%C3%A1%2C%20gostaria%20de%20obter%20mais%20detalhes%20e%20informa%C3%A7%C3%B5es%20sobre%20as%20promo%C3%A7%C3%B5es%20%F0%9F%98%8A" target="_blank">
-                                <i class="fab fa-whatsapp text-decoration-none text-white"></i>
-                            </a>
-                        </li>
-
-                        <!--MARCAR REGISTRADA-->
-                        <div class="col-sm-12">
-                            <div class="nav justify-content-center">
-                                <li class="nav-item">
-                                    <i id="marca" class="far fa-registered text-white"> 2020 - Just-T Store</i>
-                                </li>
-                            </div>
-                        </div>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </footer>
 
 </body>
 
